@@ -29,5 +29,8 @@
     <ClInclude Include="Sort.h">
       <Filter>Source Files\Sort</Filter>
     </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Source Files\Graph</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
