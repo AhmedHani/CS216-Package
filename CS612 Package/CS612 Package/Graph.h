@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <functional>
 #include <vector>
+#include <queue>
 #define Max 200 + 5
 #define INF 1000000000
 
@@ -128,6 +129,32 @@ public:
 	 }
 
 	 W dijkstra(T source, T destination) {
+		 priority_queue<pair<T, W>, vector<pair<T, W>, greater<pair<T, W>>>> pq;
+		
+		 vector<W> distance(this->nodes.size() + 1);
 
+		 for (size_t i = 0; i < this->nodes.size(); i++) {
+			 distance[i] = INF;
+		 }
+
+		 distance[source] = (W)0;
+		 pq.push(make_pair(source, (W)0));
+
+		 while(!pq.empty()) {
+			 pair<T, W> front = pq.top();
+			 pq.pop;
+			 T from = front.first;
+
+			 for (size_t i = 0; i < this->adjacency_list[from].size(); i++) {
+				 pair<T, W> to = this->adjacency_list[from][i];
+
+				 if (distance[from] + to.second < distance[to.second]) {
+					 distance[to.second] = distance[from] + to.second;
+					 pq.push(make_pair(to.first, distance[t.first]));
+				 }
+			 }
+		 }
+
+		 return distance[destination];
 	 }
 };

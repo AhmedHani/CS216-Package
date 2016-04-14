@@ -17,7 +17,6 @@ int main() {
 	edges.push_back(Edge<int, double>(2, 4, 4.0));
 	edges.push_back(Edge<int, double>(3, 4, 0.0));
 	edges.push_back(Edge<int, double>(1, 4, 4.0));
-	edges.push_back(Edge<int, double>(4, 1, -4.0));
 
 
 	Graph<int, double> g(nodes, edges);
