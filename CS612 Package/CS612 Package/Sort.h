@@ -98,9 +98,9 @@ public:
 		return this->data;
 	}
 
-	int partition(int start, int end, int pivot) {
-		int left = start - 1;
-		int right= end;
+	T partition(T start, T end, T pivot) {
+		T left = start - 1;
+		T right= end;
 
 		while(true) {
 			while(this->data[++left] < pivot) {
@@ -127,8 +127,8 @@ public:
 		if (end - start <= 0) {
 			return 0;
 		} else {
-			int pivot = this->data[end];
-			int partition_index = partition(start, end, pivot);
+			T pivot = this->data[end];
+			T partition_index = partition(start, end, pivot);
 
 			quick_sort(start, partition_index - 1);
 			quick_sort(partition_index + 1, end);
