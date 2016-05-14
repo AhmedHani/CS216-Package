@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-	vector<int> nodes;
+	/*vector<int> nodes;
 	nodes.push_back(1);
 	nodes.push_back(2);
 	nodes.push_back(3);
@@ -21,7 +21,21 @@ int main() {
 
 	Graph<int, double> g(nodes, edges);
 	bool neg = false;
-	cout << g.bellman_ford(1, 4, neg) << endl;
+	cout << g.bellman_ford(1, 4, neg) << endl;*/
+	int in;
+	cin >> in;
+
+	int* arr = new int[in];
+
+	for (int i = 0; i < in; i++)
+		cin >> arr[i];
+
+	Sort<int> s(arr, in - 1);
+
+	arr = s.quick_sort(0, in - 1);
+
+	for (int i = 0; i < in; i++)
+		cout << arr[i] << " ";
 
 
 	return 0;
